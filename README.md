@@ -6,8 +6,6 @@
 
 This playbook installs and configures most of the software I use on my Mac for web and software development. Some things in macOS are slightly difficult to automate, so I still have some manual installation steps, but at least it's all documented here.
 
-This is a work in progress, and is mostly a means for me to document my current Mac's setup. I'll be evolving this playbook over time.
-
 *See also*:
 
   - [Boxen](https://github.com/boxen)
@@ -18,10 +16,12 @@ This is a work in progress, and is mostly a means for me to document my current 
 ## Installation
 
   1. Ensure Apple's command line tools are installed (`xcode-select --install` to launch the installer).
-  2. [Install Ansible](http://docs.ansible.com/intro_installation.html).
-  3. Clone this repository to your local drive.
-  4. Run `$ ansible-galaxy install -r requirements.yml` inside this directory to install required Ansible roles.
-  5. Run `ansible-playbook main.yml -i inventory --ask-become-pass` inside this directory. Enter your account password when prompted.
+  2. \[option `briandant` preference\] Install [pyenv](https://github.com/pyenv/pyenv#installation)
+  3. \[option `briandant` pref\] Install [pyenv-virtualenv](https://github.com/pyenv/pyenv-virtualenv)
+  4. [Install Ansible](http://docs.ansible.com/intro_installation.html).
+  5. Clone this repository to your local drive.
+  6. Run `$ ansible-galaxy install -r requirements.yml` inside this directory to install required Ansible roles.
+  7. Run `ansible-playbook main.yml -i inventory --ask-become-pass` inside this directory. Enter your account password when prompted.
 
 > Note: If some Homebrew commands fail, you might need to agree to Xcode's license or fix some other Brew issue. Run `brew doctor` to see if this is the case.
 
